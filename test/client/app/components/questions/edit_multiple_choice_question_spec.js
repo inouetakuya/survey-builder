@@ -5,7 +5,7 @@ var TestUtils = React.addons.TestUtils;
 
 var EditMultipleChoiceQuestion = require('../../../../../client/app/components/questions/edit_multiple_choice_question');
 
-describe("components/questions/edit_essay_question", function (){
+describe("components/questions/edit_essay_question", function () {
   var subject, onChangeSpy, onRemovSpy;
 
   beforeEach(function () {
@@ -18,24 +18,24 @@ describe("components/questions/edit_essay_question", function (){
     onRemoveSpy = jasmine.createSpy();
 
     subject = TestUtils.renderIntoDocument(
-      <EditMultipleChoiceQuestion key={1} question={question} onChange={onChangeSpy} onRemove={onRemoveSpy}/>
+      <EditMultipleChoiceQuestion key={1} question={question} onChange={onChangeSpy} onRemove={onRemoveSpy} />
     );
   });
 
   describe('#render', function () {
     it('renders the a description input', function () {
       var descriptionNode = TestUtils.findRenderedDOMComponentWithClass(subject, 'description');
-      expect( descriptionNode).not.toBe( null );
-      expect( descriptionNode.tagName ).toBe( 'INPUT' );
+      expect(descriptionNode).not.toBe(null);
+      expect(descriptionNode.tagName).toBe('INPUT');
     });
   });
 
   describe('#handleDescriptoinChange', function () {
     it('calls the onChange prop with the new question description', function () {
       subject.handleDescriptionChange({ target: { value: 'new desc' } });
-      expect( onChangeSpy ).toHaveBeenCalledWith(
+      expect(onChangeSpy).toHaveBeenCalledWith(
         1,
-        { description: 'new desc', options: []}
+        { description: 'new desc', options: [] }
       );
     });
   });
@@ -43,9 +43,9 @@ describe("components/questions/edit_essay_question", function (){
   describe('#handleOptionAdd', function () {
     it('calls the onChange prop with an new empty option', function () {
       subject.handleOptionAdd();
-      expect( onChangeSpy ).toHaveBeenCalledWith(
+      expect(onChangeSpy).toHaveBeenCalledWith(
         1,
-        { description: '', options: ['']}
+        { description: '', options: [''] }
       );
     });
   });
@@ -61,10 +61,10 @@ describe("components/questions/edit_essay_question", function (){
     });
 
     it('calls the onChange prop with an new empty option', function () {
-      subject.handleOptionChange(0, { target: { value: 'Clark Kent' }} );
-      expect( onChangeSpy ).toHaveBeenCalledWith(
+      subject.handleOptionChange(0, { target: { value: 'Clark Kent' } });
+      expect(onChangeSpy).toHaveBeenCalledWith(
         1,
-        { description: 'who is superman?', options: ['Clark Kent']}
+        { description: 'who is superman?', options: ['Clark Kent'] }
       );
     });
   });
@@ -81,9 +81,9 @@ describe("components/questions/edit_essay_question", function (){
 
     it('calls the onChange prop with an new empty option', function () {
       subject.handleOptionRemove(0);
-      expect( onChangeSpy ).toHaveBeenCalledWith(
+      expect(onChangeSpy).toHaveBeenCalledWith(
         1,
-        { description: 'who is superman?', options: []}
+        { description: 'who is superman?', options: [] }
       );
     });
   });
@@ -91,7 +91,7 @@ describe("components/questions/edit_essay_question", function (){
   describe('#handleRemove', function () {
     it('calls the onRemove prop with key', function () {
       subject.handleRemove()
-      expect( onRemoveSpy ).toHaveBeenCalledWith(1);
+      expect(onRemoveSpy).toHaveBeenCalledWith(1);
     });
   });
 });

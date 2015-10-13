@@ -8,9 +8,9 @@ var jasmineReact = require("jasmine-react-helpers");
 var HelloRandom = require('../../../client/testing_examples/hello_random');
 
 
-describe("HelloRandom", function(){
-  describe("spyOnClass", function(){
-    it("should be able to spy on a function of a react class", function(){
+describe("HelloRandom", function () {
+  describe("spyOnClass", function () {
+    it("should be able to spy on a function of a react class", function () {
       // We want to render the HelloRandom component and validate the output is correct.
       //   The important part to test is "is the render function outputting the correct text
       //   for a given author".
@@ -18,7 +18,10 @@ describe("HelloRandom", function(){
       //   if your app doesn't have any "random" functions, the same strategy would be helpful if
       //   a function like getCurrentAuthor had complex behavior which should be tested independently
       //   of the render function.
-      jasmineReact.spyOnClass(HelloRandom, "getRandomAuthor").andReturn({name: "Fake User", githubUsername: "fakeGithub"});
+      jasmineReact.spyOnClass(HelloRandom, "getRandomAuthor").andReturn({
+        name: "Fake User",
+        githubUsername: "fakeGithub"
+      });
 
       var myHelloRandom = TestUtils.renderIntoDocument(<HelloRandom />);
 

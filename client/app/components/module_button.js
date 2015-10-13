@@ -11,7 +11,7 @@ var ModuleButton = React.createClass({
   render: function () {
     return (
       <div draggable="true" className="btn btn-lg btn-secondary draggable" onDragStart={this.handleDragStart}>
-        <span className="glyphicon glyphicon-move" onClick={this.props.onClick}/>
+        <span className="glyphicon glyphicon-move" onClick={this.props.onClick} />
         {this.props.text}
       </div>
     );

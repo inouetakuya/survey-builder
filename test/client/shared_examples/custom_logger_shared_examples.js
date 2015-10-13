@@ -4,16 +4,16 @@ var React = require("react/addons");
 var TestUtils = React.addons.TestUtils;
 var jasmineReact = require("jasmine-react-helpers");
 
-var CustomLoggerSharedExamples = function(attributes){
+var CustomLoggerSharedExamples = function (attributes) {
 
   var componentClass;
 
-  beforeEach(function(){
+  beforeEach(function () {
     componentClass = attributes.componentClass;
   });
 
-  describe("componentWillMount", function(){
-    it("should call 'log' with 'component will mount...'", function(){
+  describe("componentWillMount", function () {
+    it("should call 'log' with 'component will mount...'", function () {
       var logSpy = jasmineReact.spyOnClass(componentClass, "log");
 
       // render the component.  React will implicity call the componentWillMount
@@ -26,8 +26,8 @@ var CustomLoggerSharedExamples = function(attributes){
     });
   });
 
-  describe("log", function(){
-    it("should call console.log with 'DEBUG: ' and then the passed in message", function(){
+  describe("log", function () {
+    it("should call console.log with 'DEBUG: ' and then the passed in message", function () {
       spyOn(console, "log");
 
       var subject = TestUtils.renderIntoDocument(<componentClass />);

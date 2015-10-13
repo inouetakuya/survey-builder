@@ -1,10 +1,10 @@
-var Dispatcher = function() {
+var Dispatcher = function () {
   this.handlers = [];
   this.isDispatching = false;
   this.pendingPayload = null;
 }
 
-Dispatcher.prototype.register = function(callback) {
+Dispatcher.prototype.register = function (callback) {
   this.handlers.push({
     isPending: false,
     isHandled: false,
@@ -12,13 +12,13 @@ Dispatcher.prototype.register = function(callback) {
   });
 };
 
-Dispatcher.prototype.dispatch = function(payload) {
+Dispatcher.prototype.dispatch = function (payload) {
   if (this.isDispatching) {
     throw new Error("Cannot dispatch in the middle of a dispatch!");
   }
 
   // Initialize states to begin the dispatch
-  this.handlers.forEach(function(handler) {
+  this.handlers.forEach(function (handler) {
     handler.isPending = false;
     handler.isHandled = false;
   });
@@ -28,7 +28,7 @@ Dispatcher.prototype.dispatch = function(payload) {
 
   try {
     // Invoke the handler callbacks
-    this.handlers.forEach(function(handler) {
+    this.handlers.forEach(function (handler) {
       if (!handler.isPending) {
         handler.isPending = true;
         handler.callback(payload);

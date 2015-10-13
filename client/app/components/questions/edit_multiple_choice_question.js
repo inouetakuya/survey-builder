@@ -27,9 +27,9 @@ var EditMultipleChoiceQuestion = React.createClass({
             className='small'
             value={option}
             onChange={this.handleOptionChange.bind(this, i)}
-          />
+            />
           <a className='remove-option' onClick={this.handleOptionRemove.bind(this, i)}>
-            <span className='glyphicon glyphicon-remove'/>
+            <span className='glyphicon glyphicon-remove' />
           </a>
         </li>
       );
@@ -45,7 +45,7 @@ var EditMultipleChoiceQuestion = React.createClass({
           {options}
           <li className='add-option'>
             <a onClick={this.handleOptionAdd}>
-              <span className='glyphicon glyphicon-plus'/>
+              <span className='glyphicon glyphicon-plus' />
               選択肢を追加
             </a>
           </li>

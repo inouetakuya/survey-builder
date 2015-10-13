@@ -8,10 +8,10 @@ var authors = [
 ];
 
 var HelloRandom = React.createClass({
-  getRandomAuthor: function(){
+  getRandomAuthor: function () {
     return authors[Math.floor(Math.random() * authors.length)];
   },
-  render: function(){
+  render: function () {
     var randomAuthor = this.getRandomAuthor();
 
     return (

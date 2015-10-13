@@ -5,7 +5,7 @@ var TestUtils = React.addons.TestUtils;
 
 var EditQuestion = require('../../../../../client/app/components/questions/edit_question');
 
-describe("components/questions/edit_question", function (){
+describe("components/questions/edit_question", function () {
   var subject, onRemoveSpy;
 
   beforeEach(function () {
@@ -13,7 +13,7 @@ describe("components/questions/edit_question", function (){
 
     subject = TestUtils.renderIntoDocument(
       <EditQuestion type='essay' onRemove={onRemoveSpy}>
-        <div className='child'/>
+        <div className='child' />
       </EditQuestion>
     );
   });
@@ -22,26 +22,28 @@ describe("components/questions/edit_question", function (){
     it('renders the type', function () {
       expect(
         TestUtils.findRenderedDOMComponentWithClass(subject, 'type')
-      ).not.toBe( null );
+      ).not.toBe(null);
     });
 
     it('renders the children', function () {
       expect(
         TestUtils.findRenderedDOMComponentWithClass(subject, 'child')
-      ).not.toBe( null );
+      ).not.toBe(null);
     });
   });
 
   describe('when clicking the remove icon', function () {
     beforeEach(function () {
-      window.confirm = function () { return true; };
+      window.confirm = function () {
+        return true;
+      };
       TestUtils.Simulate.click(
         TestUtils.findRenderedDOMComponentWithClass(subject, 'remove')
       );
     });
 
     it('calls the onRemove prop', function () {
-      expect( onRemoveSpy ).toHaveBeenCalled();
+      expect(onRemoveSpy).toHaveBeenCalled();
     });
   });
 });

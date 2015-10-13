@@ -9,7 +9,7 @@ var answerTypeMap = {
 };
 
 var getAnswerClass = function (type) {
-  if(answerTypeMap[type] !== undefined) {
+  if (answerTypeMap[type] !== undefined) {
     return answerTypeMap[type];
   }
 };

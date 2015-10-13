@@ -3,15 +3,15 @@
 var React = require("react");
 
 var Footprint = React.createClass({
-  getInitialState: function(){
+  getInitialState: function () {
     return { width: undefined };
   },
-  componentDidMount: function(){
+  componentDidMount: function () {
     var componentWidth = this.getDOMNode().offsetWidth;
-    this.setState({width: componentWidth});
+    this.setState({ width: componentWidth });
   },
-  render: function(){
-    var divStyle = {width: "100px"};
+  render: function () {
+    var divStyle = { width: "100px" };
     return (<div style={divStyle}>component width: {this.state.width}</div>);
   }
 });

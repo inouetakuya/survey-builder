@@ -94,8 +94,8 @@ a {
 .form-control:focus {
   border-color: #4abfe2;
   outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(74, 191, 226, 0.6);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(74, 191, 226, 0.6);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(74, 191, 226, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(74, 191, 226, 0.6);
 }
 
 /* .well ------------------------------------------------------------------- */
@@ -144,7 +144,7 @@ a {
 
 .btn-primary:active,
 .btn-primary.active,
-.open>.dropdown-toggle.btn-primary {
+.open > .dropdown-toggle.btn-primary {
   color: #396a01;
   background-color: #7ed321;
   border-color: #7ed321;
@@ -154,7 +154,7 @@ a {
 .btn-primary:focus,
 .btn-primary:active,
 .btn-primary.active,
-.open>.dropdown-toggle.btn-primary {
+.open > .dropdown-toggle.btn-primary {
   color: #396a01;
   background-color: #7ed321;
   border-color: #7ed321;
@@ -168,7 +168,7 @@ a {
 
 .btn-secondary:active,
 .btn-secondary.active,
-.open>.dropdown-toggle.btn-secondary {
+.open > .dropdown-toggle.btn-secondary {
   color: #fff;
   background-color: #4abfe2;
   border-color: #4abfe2;
@@ -178,7 +178,7 @@ a {
 .btn-secondary:focus,
 .btn-secondary:active,
 .btn-secondary.active,
-.open>.dropdown-toggle.btn-secondary {
+.open > .dropdown-toggle.btn-secondary {
   color: #fff;
   background-color: #4abfe2;
   border-color: #4abfe2;
@@ -210,11 +210,11 @@ a {
   font-size: 28px;
 }
 
-
 /* .survey-editor ---------------------------------------------------------- */
 .survey-editor .modules li {
   margin-bottom: 15px;
 }
+
 .survey-editor .modules .btn {
   width: 100%;
   text-align: left;
@@ -230,6 +230,7 @@ a {
   -moz-transition: all 0.2s;
   transition: all 0.2s;
 }
+
 .survey-editor .drop-zone.drag-enter {
   border: 1px solid #7ED321;
   background: #7ED321;
@@ -242,8 +243,9 @@ a {
 
 .survey-editor .question-enter {
   transform: scale(1.2);
-  transition: transform 0.2s cubic-bezier(.97,.84,.5,1.21);
+  transition: transform 0.2s cubic-bezier(.97, .84, .5, 1.21);
 }
+
 .survey-editor .question-enter-active {
   transform: scale(1);
 }
@@ -251,7 +253,7 @@ a {
 .survey-editor .question-leave {
   transform: translateY(0);
   opacity: 0;
-  transition: opacity 1.2s, transform 1s cubic-bezier(.52,-0.25,.52,.95);
+  transition: opacity 1.2s, transform 1s cubic-bezier(.52, -0.25, .52, .95);
 }
 
 .survey-editor .question-leave-active {
@@ -269,6 +271,7 @@ a {
   font-size: 12px;
   position: relative;
 }
+
 .edit-question .type .remove {
   cursor: pointer;
   position: absolute;
@@ -284,6 +287,7 @@ a {
 .edit-question.edit-multiple-choice .description {
   margin-bottom: 15px;
 }
+
 .edit-question.edit-multiple-choice .options {
   margin-left: 30px;
 }
@@ -297,17 +301,21 @@ a {
   color: #ddd;
   margin-left: 7px;
 }
+
 .edit-question.edit-multiple-choice .remove-option:hover {
   color: #D0021B;
 
 }
+
 .edit-question.edit-multiple-choice .add-option a {
   font-size: 12px;
   color: #7ed321;
 }
+
 .edit-question.edit-multiple-choice .add-option a .glyphicon {
   margin-right: 7px;
 }
+
 .edit-question.edit-multiple-choice .add-option a:hover {
   color: #396a01;
 }

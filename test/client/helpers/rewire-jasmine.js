@@ -1,7 +1,7 @@
 var rewires = [];
 
 var rewireJasmine = {
-  rewire: function(mod, variableName, newVariableValue){
+  rewire: function (mod, variableName, newVariableValue) {
     // save off the real value, so we can revert back to it later
     var originalVariableValue = mod.__get__(variableName);
 
@@ -17,7 +17,7 @@ var rewireJasmine = {
     mod.__set__(variableName, newVariableValue);
   },
 
-  unwireAll: function(){
+  unwireAll: function () {
     for (var i = 0; i < rewires.length; i++) {
       var mod = rewires[i].mod,
         variableName = rewires[i].variableName,
@@ -29,7 +29,7 @@ var rewireJasmine = {
   }
 };
 
-afterEach(function(){
+afterEach(function () {
   // unwire all modules we rewire'd
   rewireJasmine.unwireAll();
 

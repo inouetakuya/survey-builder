@@ -5,7 +5,7 @@ var TestUtils = React.addons.TestUtils;
 
 var SurveyForm = require('../../../../client/app/components/survey_form');
 
-describe("components/survey_form", function (){
+describe("components/survey_form", function () {
   var subject, onChangeSpy;
 
   beforeEach(function () {
@@ -16,7 +16,7 @@ describe("components/survey_form", function (){
         title='Superhero survey'
         introduction='help us find out who is most awesome'
         onChange={onChangeSpy}
-      />
+        />
     );
   });
 
@@ -26,7 +26,7 @@ describe("components/survey_form", function (){
         subject,
         'title'
       );
-      expect( titleInput).not.toBe( null );
+      expect(titleInput).not.toBe(null);
     });
 
     it('renders the introduction textarea', function () {
@@ -34,21 +34,21 @@ describe("components/survey_form", function (){
         subject,
         'introduction'
       );
-      expect( introductionTextarea).not.toBe( null );
+      expect(introductionTextarea).not.toBe(null);
     });
   });
 
   describe('#handleTitleChange', function () {
     it('calls the onChange prop', function () {
-      subject.handleTitleChange({ target: { value: 'new title' }});
-      expect( onChangeSpy ).toHaveBeenCalledWith({ title: 'new title' });
+      subject.handleTitleChange({ target: { value: 'new title' } });
+      expect(onChangeSpy).toHaveBeenCalledWith({ title: 'new title' });
     });
   });
 
   describe('#handleIntroductionChange', function () {
     it('calls the onChange prop', function () {
-      subject.handleIntroductionChange({ target: { value: 'new intro' }});
-      expect( onChangeSpy ).toHaveBeenCalledWith({ introduction: 'new intro' });
+      subject.handleIntroductionChange({ target: { value: 'new intro' } });
+      expect(onChangeSpy).toHaveBeenCalledWith({ introduction: 'new intro' });
     });
   });
 

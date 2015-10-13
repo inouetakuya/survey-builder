@@ -6,13 +6,14 @@ var merge = require('lodash-node/modern/objects/merge');
 
 var TakeSurveyItem = React.createClass({
   mixins: [PropsMethodMixin],
-  getDefaultProps: function() {
+  getDefaultProps: function () {
     return {
-      onCompleted: function() {},
+      onCompleted: function () {
+      },
       item: {}
     };
   },
-  handleItemCompleted: function(value) {
+  handleItemCompleted: function (value) {
     this.callMethodOnProps('onCompleted', {
       id: this.props.item.id,
       value: value
@@ -21,14 +22,14 @@ var TakeSurveyItem = React.createClass({
   getSurveyItemClass: function () {
     return AnswerFactory.getAnswerClass(this.props.item.type);
   },
-  renderSurveyItem: function() {
+  renderSurveyItem: function () {
     var ItemComponentClass = this.getSurveyItemClass();
     var props = merge({}, this.props.item.meta, {
       onCompleted: this.handleItemCompleted
     });
     return ItemComponentClass(props);
   },
-  render:function() {
+  render: function () {
     return <div className="survey-item">
       {this.renderSurveyItem()}
     </div>

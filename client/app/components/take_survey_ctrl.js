@@ -19,10 +19,10 @@ var TakeSurveyCtrl = React.createClass({
       survey: mockData
     };
   },
-  handleSurveySave: function(results) {
+  handleSurveySave: function (results) {
     SurveyActions.record(results);
   },
-  render:function () {
+  render: function () {
     var props = merge({}, this.state.survey, {
       onSave: this.handleSurveySave
     });

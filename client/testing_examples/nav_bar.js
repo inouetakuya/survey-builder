@@ -5,7 +5,7 @@ var React = require("react");
 var CompanyLogo = require("./company_logo");
 
 var NavBar = React.createClass({
-  render: function(){
+  render: function () {
     return (
       <div>
         <CompanyLogo />
@@ -17,7 +17,7 @@ var NavBar = React.createClass({
           <li className="tab">Tab 5</li>
         </ul>
       </div>
-      );
+    );
   }
 });
 

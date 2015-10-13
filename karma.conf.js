@@ -1,5 +1,5 @@
 // Karma configuration
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -20,8 +20,7 @@ module.exports = function(config) {
 
 
     // list of files to exclude
-    exclude: [
-    ],
+    exclude: [],
 
 
     // preprocess matching files before serving them to the browser
@@ -34,7 +33,7 @@ module.exports = function(config) {
 
     browserify: {
       debug: true,
-      transform: [ 'reactify', 'rewireify' ]
+      transform: ['reactify', 'rewireify']
     },
 
 

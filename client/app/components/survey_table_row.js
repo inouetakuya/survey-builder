@@ -16,7 +16,7 @@ function integerWithThousandsSeparator(x) {
 
 var SurveyTableRow = React.createClass({
   propTypes: {
-   survey: React.PropTypes.shape({
+    survey: React.PropTypes.shape({
       id: React.PropTypes.string.isRequired,
       title: React.PropTypes.string.isRequired,
       publishedDate: React.PropTypes.instanceOf(Date).isRequired,
@@ -25,7 +25,7 @@ var SurveyTableRow = React.createClass({
     }).isRequired
   },
 
-  render: function() {
+  render: function () {
     var survey = this.props.survey;
 
     var total = survey.activity.reduce(function (memo, n) {

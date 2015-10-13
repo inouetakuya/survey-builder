@@ -12,7 +12,7 @@ var EditMultipleChoiceQuestion = require('../../../../client/app/components/ques
 var DraggableQuestions = require('../../../../client/app/components/draggable_questions');
 var SurveyForm = require('../../../../client/app/components/survey_form');
 
-describe("components/survey_editor", function (){
+describe("components/survey_editor", function () {
   var subject;
 
   beforeEach(function () {
@@ -24,26 +24,26 @@ describe("components/survey_editor", function (){
   describe('#render', function () {
     it('renders <DraggableQuestions />', function () {
       expect(
-        TestUtils.findRenderedComponentWithType( subject, DraggableQuestions )
-      ).not.toBe( null );
+        TestUtils.findRenderedComponentWithType(subject, DraggableQuestions)
+      ).not.toBe(null);
     });
 
     it('renders <SurveyForm />', function () {
       expect(
-        TestUtils.findRenderedComponentWithType( subject, SurveyForm )
-      ).not.toBe( null );
+        TestUtils.findRenderedComponentWithType(subject, SurveyForm)
+      ).not.toBe(null);
     });
 
     it('renders a drop zone', function () {
       expect(
-        TestUtils.findRenderedDOMComponentWithClass( subject, 'drop-zone' )
-      ).not.toBe( null );
+        TestUtils.findRenderedDOMComponentWithClass(subject, 'drop-zone')
+      ).not.toBe(null);
     });
 
     it('renders as save button', function () {
       expect(
-        TestUtils.findRenderedDOMComponentWithClass( subject, 'btn-save' )
-      ).not.toBe( null );
+        TestUtils.findRenderedDOMComponentWithClass(subject, 'btn-save')
+      ).not.toBe(null);
     });
 
     describe('with questions added to the survey', function () {
@@ -69,16 +69,16 @@ describe("components/survey_editor", function (){
             subject,
             EditQuestion
           ).length
-        ).toBe( 2 );
+        ).toBe(2);
       });
     });
   });
 
   describe('#handleFormChange', function () {
     it('updates the form field', function () {
-      spyOn( subject, 'setState' );
+      spyOn(subject, 'setState');
       subject.handleFormChange({ title: 'Superhero Survey' });
-      expect( subject.setState ).toHaveBeenCalledWith({
+      expect(subject.setState).toHaveBeenCalledWith({
         title: 'Superhero Survey'
       });
     });
@@ -92,15 +92,15 @@ describe("components/survey_editor", function (){
 
       subject.handleDragOver(ev);
 
-      expect( ev.preventDefault ).toHaveBeenCalled();
+      expect(ev.preventDefault).toHaveBeenCalled();
     });
   });
 
   describe('#handleDragEnter', function () {
     it('marks the drop zone as entered', function () {
-      spyOn( subject, 'setState' );
+      spyOn(subject, 'setState');
       subject.handleDragEnter();
-      expect( subject.setState ).toHaveBeenCalledWith({
+      expect(subject.setState).toHaveBeenCalledWith({
         dropZoneEntered: true
       });
     });
@@ -108,9 +108,9 @@ describe("components/survey_editor", function (){
 
   describe('#handleDragLeave', function () {
     it('marks the drop zone as left', function () {
-      spyOn( subject, 'setState' );
+      spyOn(subject, 'setState');
       subject.handleDragEnter();
-      expect( subject.setState ).toHaveBeenCalledWith({
+      expect(subject.setState).toHaveBeenCalledWith({
         dropZoneEntered: true
       });
     });
@@ -118,7 +118,7 @@ describe("components/survey_editor", function (){
 
   describe('#handleDrop', function () {
     it('it adds the questionType and marks drop zone as left', function () {
-      spyOn( subject, 'setState' );
+      spyOn(subject, 'setState');
 
       subject.handleDrop({
         dataTransfer: {
@@ -128,7 +128,7 @@ describe("components/survey_editor", function (){
         }
       });
 
-      expect( subject.setState ).toHaveBeenCalledWith({
+      expect(subject.setState).toHaveBeenCalledWith({
         questions: [{ type: 'yes_no' }],
         dropZoneEntered: false
       });
@@ -143,12 +143,12 @@ describe("components/survey_editor", function (){
         ]
       });
 
-      spyOn( subject, 'setState' );
+      spyOn(subject, 'setState');
     });
 
     it('updates the question', function () {
       subject.handleQuestionChange(0, { type: 'essay', description: 'who is batman?' });
-      expect( subject.setState ).toHaveBeenCalledWith({
+      expect(subject.setState).toHaveBeenCalledWith({
         questions: [{ type: 'essay', description: 'who is batman?' }]
       });
     });
@@ -162,12 +162,12 @@ describe("components/survey_editor", function (){
         ]
       });
 
-      spyOn( subject, 'setState' );
+      spyOn(subject, 'setState');
     });
 
     it('removes the question', function () {
       subject.handleQuestionRemove(0);
-      expect( subject.setState ).toHaveBeenCalledWith({
+      expect(subject.setState).toHaveBeenCalledWith({
         questions: []
       });
     });

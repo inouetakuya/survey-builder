@@ -18,14 +18,14 @@ describe("components/main_nav", function () {
   describe('#render', function () {
     it('has a "All Surveys" nav item', function () {
       var item = TestUtils.scryRenderedDOMComponentsWithTag(subject, 'a')[0];
-      expect( item.props.href ).toBe( '/' );
-      expect( item.props.children ).toBe( 'すべてのサーベイ' );
+      expect(item.props.href).toBe('/');
+      expect(item.props.children).toBe('すべてのサーベイ');
     });
 
     it('has a "Add Surveys" nav item', function () {
       var item = TestUtils.scryRenderedDOMComponentsWithTag(subject, 'a')[1];
-      expect( item.props.href ).toBe( '/add_survey' );
-      expect( item.props.children ).toBe( 'サーベイを追加' );
+      expect(item.props.href).toBe('/add_survey');
+      expect(item.props.children).toBe('サーベイを追加');
     });
 
   });

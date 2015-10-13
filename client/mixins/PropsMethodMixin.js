@@ -8,11 +8,11 @@
 // calling a method if it exists, ignoring it otherwise.
 
 var PropsMethodMixin = {
-  hasMethodOnProps: function(methodName) {
+  hasMethodOnProps: function (methodName) {
     return (typeof this.props[methodName] === 'function');
   },
 
-  callMethodOnProps: function(methodName, params) {
+  callMethodOnProps: function (methodName, params) {
     if (this.hasMethodOnProps(methodName)) {
       params = Array.prototype.slice.call(arguments, 1);
       var method = this.props[methodName];
@@ -20,7 +20,7 @@ var PropsMethodMixin = {
     }
   },
 
-  applyMethodOnProps: function(methodName, paramsArray) {
+  applyMethodOnProps: function (methodName, paramsArray) {
     if (this.hasMethodOnProps(methodName)) {
       var method = this.props[methodName];
       return method.apply(this.props, paramsArray);

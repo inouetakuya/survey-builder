@@ -3,8 +3,8 @@ var cheerio = require('cheerio');
 var app = require('../../server/server.js');
 var expect = require('expect.js');
 
-describe("serverside routing", function(){
-  it("should render the AddSurvey component for the /add_survey path", function(done){
+describe("serverside routing", function () {
+  it("should render the AddSurvey component for the /add_survey path", function (done) {
 
     request(app)
       .get('/add_survey')
@@ -17,7 +17,7 @@ describe("serverside routing", function(){
       });
   });
 
-  it("should render a 404 page for an invalid route", function(done){
+  it("should render a 404 page for an invalid route", function (done) {
     request(app)
       .get('/not-found-route')
       .expect(404)

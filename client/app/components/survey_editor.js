@@ -18,9 +18,9 @@ var update = React.addons.update;
 var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
 var SUPPORTED_QUESTIONS = {
-  yes_no:           EditYesNoQuestion,
-  multiple_choice:  EditMultipleChoiceQuestion,
-  essay:            EditEssayQuestion
+  yes_no: EditYesNoQuestion,
+  multiple_choice: EditMultipleChoiceQuestion,
+  essay: EditEssayQuestion
 };
 
 var SurveyEditor = React.createClass({
@@ -61,7 +61,7 @@ var SurveyEditor = React.createClass({
               title={this.state.title}
               introduction={this.state.introduction}
               onChange={this.handleFormChange}
-            />
+              />
 
             <Divider>質問</Divider>
             <ReactCSSTransitionGroup transitionName='question'>
@@ -74,7 +74,7 @@ var SurveyEditor = React.createClass({
               onDragEnter={this.handleDragEnter}
               onDragLeave={this.handleDragLeave}
               onDrop={this.handleDrop}
-            >
+              >
               左側の部品をドラッグアンドドロップしてください
             </div>
 
@@ -98,11 +98,11 @@ var SurveyEditor = React.createClass({
   },
 
   handleDragEnter: function () {
-    this.setState({dropZoneEntered: true});
+    this.setState({ dropZoneEntered: true });
   },
 
   handleDragLeave: function () {
-    this.setState({dropZoneEntered: false});
+    this.setState({ dropZoneEntered: false });
   },
 
   handleDrop: function (ev) {
@@ -135,9 +135,9 @@ var SurveyEditor = React.createClass({
 
   handleSaveClicked: function (ev) {
     SurveyActions.save({
-      title:        this.state.title,
+      title: this.state.title,
       introduction: this.state.introduction,
-      questions:    this.state.questions
+      questions: this.state.questions
     });
   }
 

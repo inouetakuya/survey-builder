@@ -7,14 +7,14 @@ var AsyncState = require('react-router').AsyncState;
 var SurveyTable = require('./survey_table');
 
 var ListSurveys = React.createClass({
-  mixins:[AsyncState],
+  mixins: [AsyncState],
 
-  statics:{
-    getInitialAsyncState: function(path, query, setState){
-      return new Promise(function(resolve, reject){
+  statics: {
+    getInitialAsyncState: function (path, query, setState) {
+      return new Promise(function (resolve, reject) {
         setTimeout(function () {
           setState({
-            surveys:[
+            surveys: [
               {
                 id: 'asd123',
                 uri: 'asd123',
@@ -22,7 +22,7 @@ var ListSurveys = React.createClass({
                 title: 'ハリーポッター',
                 publishedDate: new Date(),
                 modifiedDate: new Date(),
-                activity: [121,32,54,12,546]
+                activity: [121, 32, 54, 12, 546]
               }
             ]
           })
@@ -32,15 +32,15 @@ var ListSurveys = React.createClass({
     }
   },
 
-  render: function(){
-    if(!this.state.surveys){
+  render: function () {
+    if (!this.state.surveys) {
       return <div>Loading ... </div>
     }
 
     return (
       <div className='list-surveys'>
         <h1>アクティブなサーベイ</h1>
-        <SurveyTable surveys={this.state.surveys}/>
+        <SurveyTable surveys={this.state.surveys} />
       </div>
     );
   }

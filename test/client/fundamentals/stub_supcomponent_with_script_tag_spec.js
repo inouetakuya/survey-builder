@@ -4,16 +4,16 @@ var React = require("react/addons");
 var TestUtils = React.addons.TestUtils;
 
 
-describe("window.vanillaScriptApp.UserBadge", function(){
-  describe("global variables", function(){
+describe("window.vanillaScriptApp.UserBadge", function () {
+  describe("global variables", function () {
     var mockUserImageComponent, realUserImageComponent;
 
-    beforeEach(function(){
+    beforeEach(function () {
       // When we want to unit test the UserBadge component, we don't want to implicitly test the UserImage component
       //   with it -- otherwise that turns into an integration test.  So we replace the UserImage component with a
       //   mock component (ie one with the minimum functionality needed)
       mockUserImageComponent = React.createClass({
-        render: function(){
+        render: function () {
           return (<div className="fake">Fake Vanilla User Image!!</div>);
         }
       });
@@ -24,11 +24,11 @@ describe("window.vanillaScriptApp.UserBadge", function(){
       window.vanillaScriptApp.UserImage = mockUserImageComponent;
     });
 
-    afterEach(function(){
+    afterEach(function () {
       window.vanillaScriptApp.UserImage = realUserImageComponent;
     });
 
-    it("should use the mock component and not the real component", function(){
+    it("should use the mock component and not the real component", function () {
       var UserBadge = window.vanillaScriptApp.UserBadge;
       var userBadge = TestUtils.renderIntoDocument(<UserBadge />);
 

@@ -2,7 +2,7 @@
 var app = require("./server/server"),
   appServer = app.listen(3040),
 
-  // run casperjs test suite in a child process
+// run casperjs test suite in a child process
   spawn = require('child_process').spawn,
   casperJs = spawn('./node_modules/casperjs/bin/casperjs', ['test', 'test/functional']);
 
@@ -15,6 +15,6 @@ casperJs.stderr.on('data', function (data) {
 });
 
 // when casperjs finishes, we should shutdown the node web server
-casperJs.on('exit', function(){
+casperJs.on('exit', function () {
   appServer.close();
 });

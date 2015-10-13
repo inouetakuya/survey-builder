@@ -24,7 +24,7 @@ var AnswerRadioInput = React.createClass({
     };
   },
   componentWillReceiveProps: function (nextProps) {
-    if(nextProps.checked !== undefined) {
+    if (nextProps.checked !== undefined) {
       this.setState({
         checked: nextProps.checked
       });
@@ -32,8 +32,8 @@ var AnswerRadioInput = React.createClass({
   },
   handleChanged: function (e) {
     var checked = e.target.checked;
-    this.setState({checked: checked});
-    if(checked) {
+    this.setState({ checked: checked });
+    if (checked) {
       this.callMethodOnProps('onChanged', this.props.value);
     }
   },

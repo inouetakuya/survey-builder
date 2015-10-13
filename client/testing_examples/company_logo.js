@@ -3,7 +3,7 @@
 var React = require("react");
 
 var CompanyLogo = React.createClass({
-  render: function(){
+  render: function () {
     return (<img src="http://example.com/logo.png" />);
   }
 });

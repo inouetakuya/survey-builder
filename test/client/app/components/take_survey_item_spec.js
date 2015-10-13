@@ -4,12 +4,12 @@ var React = require("react/addons");
 var TestUtils = React.addons.TestUtils;
 var TakeSurveyItem = require("../../../../client/app/components/take_survey_item");
 
-var renderElem = function(props) {
+var renderElem = function (props) {
   var view = TakeSurveyItem(props);
   return TestUtils.renderIntoDocument(view);
 };
 
-describe("Survey", function(){
+describe("Survey", function () {
 
   var elem = null;
   var props = {
@@ -22,27 +22,28 @@ describe("Survey", function(){
     }
   };
 
-  describe("rendering", function() {
-    beforeEach(function() {
+  describe("rendering", function () {
+    beforeEach(function () {
       elem = renderElem(props);
     });
 
-    it("should render", function(){
+    it("should render", function () {
       expect(TestUtils.isCompositeComponent(elem)).toBe(true);
       var found = TestUtils.findRenderedDOMComponentWithClass(elem, 'survey-item');
       expect(found).toNotBe(null);
     });
   });
 
-  describe("user input", function() {
+  describe("user input", function () {
 
     var callbacks = {};
     var props = {};
     var id = "123";
 
-    beforeEach(function() {
+    beforeEach(function () {
       callbacks = {
-        onCompleted: function() {}
+        onCompleted: function () {
+        }
       };
       spyOn(callbacks, "onCompleted");
 
@@ -59,12 +60,12 @@ describe("Survey", function(){
       elem = renderElem(props);
     });
 
-    afterEach(function() {
+    afterEach(function () {
       callbacks = {};
       props = {};
     });
 
-    it("responds to user input", function() {
+    it("responds to user input", function () {
       var value = "Yes";
       elem.handleItemCompleted(value);
       expect(callbacks.onCompleted).toHaveBeenCalledWith(jasmine.objectContaining({

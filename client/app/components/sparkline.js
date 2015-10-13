@@ -17,7 +17,7 @@ var Sparkline = React.createClass({
 
     return (
       <svg width={width} height={height}>
-        <path d={path} stroke='#7ED321' strokeWidth='2' fill='none'/>
+        <path d={path} stroke='#7ED321' strokeWidth='2' fill='none' />
       </svg>
     );
   },

@@ -2,7 +2,7 @@
 // see https://github.com/facebook/react/pull/347
 // source: https://github.com/facebook/react/blob/master/src/test/phantomjs-shims.js
 
-(function() {
+(function () {
 
   var Ap = Array.prototype;
   var slice = Ap.slice;
@@ -11,7 +11,7 @@
   if (!Fp.bind) {
     // PhantomJS doesn't support Function.prototype.bind natively, so
     // polyfill it whenever this module is required.
-    Fp.bind = function(context) {
+    Fp.bind = function (context) {
       var func = this;
       var args = slice.call(arguments, 1);
 

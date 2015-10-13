@@ -13,20 +13,20 @@ var TakeSurvey = React.createClass({
       results: {}
     };
   },
-  handleItemCompleted: function(params) {
+  handleItemCompleted: function (params) {
     var results = this.state.results;
     results[params.id] = params.value;
     this.setState({
       results: results
     });
   },
-  handleClick: function() {
+  handleClick: function () {
     // We could dispatch to the store here for saving or propagate
     // the save up to the controller-view as shown here.
     this.props.onSave(this.state.results);
   },
-  renderItems: function() {
-    return this.props.items.map(function(item) {
+  renderItems: function () {
+    return this.props.items.map(function (item) {
       var props = merge({}, {
         key: item.id,
         item: item,
@@ -36,7 +36,7 @@ var TakeSurvey = React.createClass({
       return itemView;
     }.bind(this));
   },
-  render:function(){
+  render: function () {
     return (
       <div className="survey">
         <h1>{this.props.title}</h1>

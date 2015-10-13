@@ -26,7 +26,7 @@ var EditQuestion = React.createClass({
         <div className='type'>
           {this.getTypeLabel()}
           <a className='remove' onClick={this.handleRemove}>
-            <span className='glyphicon glyphicon-remove'/>
+            <span className='glyphicon glyphicon-remove' />
           </a>
         </div>
         <div>{this.props.children}</div>

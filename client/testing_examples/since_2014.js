@@ -6,15 +6,15 @@ var IntervalMixin = require('./interval_mixin');
 
 var Since2014 = React.createClass({
   mixins: [IntervalMixin],
-  componentDidMount: function(){
+  componentDidMount: function () {
     this.setInterval(this.forceUpdate.bind(this), 1000);
   },
-  render: function() {
+  render: function () {
     var from = Number(new Date(2014, 0, 1));
     var to = Date.now();
     return (
-      <div>{Math.round((to-from) / 1000)}</div>
-      );
+      <div>{Math.round((to - from) / 1000)}</div>
+    );
   }
 });
 

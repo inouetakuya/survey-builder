@@ -38,14 +38,14 @@ var surveys = [{
 
 var PatternLibrary = React.createClass({
 
-  renderHeaders: function() {
-    return [1,2,3,4,5,6].map(function(i) {
+  renderHeaders: function () {
+    return [1, 2, 3, 4, 5, 6].map(function (i) {
       var tagName = "h" + i;
       return React.DOM[tagName]({}, "Header " + tagName);
     });
   },
 
-  renderButtons: function() {
+  renderButtons: function () {
     return (
       <div>
         <button className="btn btn-lg btn-primary">Save</button>
@@ -57,7 +57,7 @@ var PatternLibrary = React.createClass({
     );
   },
 
-  renderWells: function() {
+  renderWells: function () {
     return (
       <div className="row">
 
@@ -91,7 +91,7 @@ var PatternLibrary = React.createClass({
     );
   },
 
-  renderForms: function() {
+  renderForms: function () {
     return (
       <div className="row">
         <div className="col-lg-6">
@@ -99,9 +99,11 @@ var PatternLibrary = React.createClass({
           <div className="survey">
             <h1>Survey Title</h1>
             <p>A description of the survey and what we want to know and why.</p>
+
             <div className="survey-item">
               <div className="form-group">
                 <label className="survey-item-label">Email address</label>
+
                 <div className="survey-item-content">
                   <input className="form-control" placeholder="Email Address" />
                 </div>
@@ -110,6 +112,7 @@ var PatternLibrary = React.createClass({
             <div className="survey-item">
               <div className="form-group">
                 <label className="survey-item-label">Select from a list</label>
+
                 <div className="survey-item-content">
                   <div className="checkbox">
                     <label>
@@ -135,6 +138,7 @@ var PatternLibrary = React.createClass({
             <div className="survey-item">
               <div className="form-group">
                 <label className="survey-item-label">Which is your favorite</label>
+
                 <div className="survey-item-content">
                   <div className="radio">
                     <label>
@@ -154,6 +158,7 @@ var PatternLibrary = React.createClass({
             <div className="survey-item">
               <div className="form-group">
                 <label className="survey-item-label">Comments</label>
+
                 <div className="survey-item-content">
                   <textarea className="form-control" rows="5"></textarea>
                 </div>
@@ -166,7 +171,7 @@ var PatternLibrary = React.createClass({
     );
   },
 
-  render: function() {
+  render: function () {
     return (
       <div className="pattern-library">
 
@@ -177,6 +182,7 @@ var PatternLibrary = React.createClass({
         {this.renderWells()}
 
         <Divider text="Drop Zone" />
+
         <div className="row">
           <div className="col-lg-6">
             <div className="well well-dropZone">Drag and drop a module from the left</div>

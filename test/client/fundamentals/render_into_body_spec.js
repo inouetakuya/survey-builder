@@ -5,12 +5,12 @@ var React = require("react/addons");
 var HelloWorld = require('../../../client/testing_examples/hello_world');
 var Footprint = require('../../../client/testing_examples/footprint');
 
-describe("HelloWorld", function(){
-  describe("renderComponent", function(){
+describe("HelloWorld", function () {
+  describe("renderComponent", function () {
 
     var el;
 
-    beforeEach(function(){
+    beforeEach(function () {
       // put a DOM element into the <body> tag with an id of "content"
       el = document.createElement("div");
       el.id = 'content';
@@ -19,7 +19,7 @@ describe("HelloWorld", function(){
 
     // If you use React.renderComponent in your tests, you MUST do this!!
     //   Otherwise the component from one test will affect (ie pollute) the component in another test.
-    afterEach(function(){
+    afterEach(function () {
       // we need to tell React to unmount the component to clean everything up
       React.unmountComponentAtNode(el);
 
@@ -28,7 +28,7 @@ describe("HelloWorld", function(){
       el.parentNode.removeChild(el);
     });
 
-    it("should return the component which is mounted", function(){
+    it("should return the component which is mounted", function () {
       // notice how we have to specify the dom element we want to insert the
       //  component into (unlike TestUtils.renderIntoDocument)?
       var myComponent = React.renderComponent(<HelloWorld />, el);
@@ -37,7 +37,7 @@ describe("HelloWorld", function(){
       expect(myComponent.props.name).toBe("Bleeding Edge React.js Book");
     });
 
-    it("should put the component into the DOM", function(){
+    it("should put the component into the DOM", function () {
       var myComponent = React.renderComponent(<HelloWorld />, el);
 
       // notice how the width and height of the dom node are actual values
@@ -50,17 +50,17 @@ describe("HelloWorld", function(){
   // TODO: build this same example with jasmineReact and the unmounting comes for free.
 });
 
-describe("Footprint", function(){
-  describe("render", function(){
+describe("Footprint", function () {
+  describe("render", function () {
 
     var el;
 
-    beforeEach(function(){
+    beforeEach(function () {
       el = document.createElement("div");
       document.body.appendChild(el);
     });
 
-    afterEach(function(){
+    afterEach(function () {
       // we need to tell React to unmount the component to clean everything up
       React.unmountComponentAtNode(el);
 
@@ -69,7 +69,7 @@ describe("Footprint", function(){
       el.parentNode.removeChild(el);
     });
 
-    it("should output the width of the component", function(){
+    it("should output the width of the component", function () {
       var myComponent = React.renderComponent(<Footprint />, el);
       expect(myComponent.getDOMNode().textContent).toContain("component width: 100");
     });

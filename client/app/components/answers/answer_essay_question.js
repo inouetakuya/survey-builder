@@ -10,20 +10,21 @@ var AnswerEssayQuestion = React.createClass({
     label: React.PropTypes.string.isRequired,
     onCompleted: React.PropTypes.func.isRequired
   },
-  getDefaultProps: function() {
+  getDefaultProps: function () {
     return {
       value: ''
     };
   },
-  handleComplete: function(event) {
+  handleComplete: function (event) {
     this.callMethodOnProps('onCompleted', event.target.value);
   },
-  render: function() {
+  render: function () {
     return (
       <div className="form-group">
         <label className="survey-item-label">{this.props.label}</label>
+
         <div className="survey-item-content">
-          <textarea className="form-control" rows="3" onBlur={this.handleComplete}/>
+          <textarea className="form-control" rows="3" onBlur={this.handleComplete} />
         </div>
       </div>
     );

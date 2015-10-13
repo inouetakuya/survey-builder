@@ -11,7 +11,8 @@ var Divider = React.createClass({
 
     return (
       <div className="divider clearfix">
-        {text}<hr />
+        {text}
+        <hr />
       </div>
     );
   }

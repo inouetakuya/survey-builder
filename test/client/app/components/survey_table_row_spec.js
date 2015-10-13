@@ -15,7 +15,7 @@ describe("components/survey_table_row", function () {
       title: "Game of Thrones",
       publishedDate: new Date(2014, 07, 1),
       modifiedDate: new Date(2014, 07, 6),
-      activity: [1,2,3,4,5]
+      activity: [1, 2, 3, 4, 5]
     };
 
     subject = TestUtils.renderIntoDocument(
@@ -26,9 +26,9 @@ describe("components/survey_table_row", function () {
   describe("#render", function () {
     it('renders the title as a Link to the take route', function () {
       var title = TestUtils.scryRenderedComponentsWithType(subject, Link)[0];
-      expect( title.props.to ).toBe( 'take' );
-      expect( title.props.surveyId ).toBe( "287" );
-      expect( title.props.children ).toBe( "Game of Thrones" );
+      expect(title.props.to).toBe('take');
+      expect(title.props.surveyId).toBe("287");
+      expect(title.props.children).toBe("Game of Thrones");
     });
 
     it('renders the publish date', function () {
@@ -51,8 +51,8 @@ describe("components/survey_table_row", function () {
 
     it('renders a Link to the edit route', function () {
       var edit = TestUtils.scryRenderedComponentsWithType(subject, Link)[1];
-      expect( edit.props.to ).toBe( 'edit' );
-      expect( edit.props.surveyId ).toBe( "287" );
+      expect(edit.props.to).toBe('edit');
+      expect(edit.props.surveyId).toBe("287");
     });
   });
 
