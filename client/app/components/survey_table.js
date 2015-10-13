@@ -4,7 +4,6 @@ var React = require("react");
 var SurveyTableRow = require('./survey_table_row');
 
 var SurveyTable = React.createClass({
-
   propTypes: {
     surveys: React.PropTypes.array.isRequired
   },
@@ -26,7 +25,9 @@ var SurveyTable = React.createClass({
           <th></th>
         </tr>
         </thead>
+
         <tbody>{rows}</tbody>
+
       </table>
     );
   }

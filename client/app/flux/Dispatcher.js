@@ -2,7 +2,7 @@ var Dispatcher = function () {
   this.handlers = [];
   this.isDispatching = false;
   this.pendingPayload = null;
-}
+};
 
 Dispatcher.prototype.register = function (callback) {
   this.handlers.push({

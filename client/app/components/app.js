@@ -14,7 +14,7 @@ Dispatcher.register(function (payload) {
       break;
 
     case SurveyConstants.DELETE_SURVEY:
-      SurveyStore.deleteSurvey(payload.id)
+      SurveyStore.deleteSurvey(payload.id);
       break;
 
     case SurveyConstants.RECORD_SURVEY:

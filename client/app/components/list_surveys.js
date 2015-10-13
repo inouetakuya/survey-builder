@@ -25,7 +25,7 @@ var ListSurveys = React.createClass({
                 activity: [121, 32, 54, 12, 546]
               }
             ]
-          })
+          });
           resolve();
         }, 100);
       });

@@ -35,12 +35,11 @@ var Sparkline = React.createClass({
 
       if (i === 0) {
         return 'M0,' + y;
-      }
-      else {
+      } else {
         return 'L' + x + ',' + y;
       }
     }).join(' ');
-  },
+  }
 });
 
 module.exports = Sparkline;

@@ -22,6 +22,6 @@ var SurveyActions = {
       results: results
     });
   }
-}
+};
 
 module.exports = SurveyActions;
